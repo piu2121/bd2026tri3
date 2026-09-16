@@ -1,0 +1,8 @@
+{
+    "users": [
+        {"id":111,
+            "nome": "aaaa",
+            "tipo": "teste"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+*{
+    gap:0;
+    border:0;
+    margin:0;
+}
+:root{
+  --a-color:rgb(0,0,0)  
+}
+body{
+    height: 100 smvh ;
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "bd2026tri3",
+  "version": "1.0.0",
+  "description": "- é para estar funcionando",
+  "homepage": "https://github.com/piu2121/bd2026tri3#readme",
+  "bugs": {
+    "url": "https://github.com/piu2121/bd2026tri3/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piu2121/bd2026tri3.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "dependencies": {
+    "json": "^11.0.0",
+    "server": "^1.0.42",
+    "vite": "4.4.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "trabalha": "vite"
+  }
+}
