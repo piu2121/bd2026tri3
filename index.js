@@ -1,3 +1,5 @@
+const { json } = require("server/reply");
+
 const anos_lista = [];
 const eventos_lista = [];
 const incidentes_lista = [];
@@ -5,19 +7,27 @@ let anos = document.querySelectorAll('ano-div');
 let eventos = document.querySelectorAll('eventos-div');
 let incidentes = document.querySelectorAll('incidentes-div');
 
-const get_anos = () => {
+const get_anos = async () => {
     try {
-        const resposta = fetch(, {})
+        const resposta = await fetch(, {
+            method: "GET",
+        })
+        const a = JSON.parse(resposta);
+        show_incidentes(a)
     } catch (e) { console.error(e) }
 }
-const get_eventos = (id) => {
+const get_eventos = async (id) => {
     try {
-        const resposta = fetch(, {})
+        const resposta = await fetch(, { method: "GET", })
+        const a = JSON.parse(resposta);
+        show_incidentes(a)
     } catch (e) { console.error(e) }
 }
-const get_incidentes = (id) => {
+const get_incidentes = async (id) => {
     try {
-        const resposta = fetch(, {})
+        const resposta = await fetch(, { method: "GET", })
+        const a = JSON.parse(resposta);
+        show_incidentes(a)
     } catch (e) { console.error(e) }
 }
 

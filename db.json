@@ -1,8 +1,28 @@
 {
-    "users": [
-        {"id":111,
-            "nome": "aaaa",
-            "tipo": "teste"
+    "Clima_ano": [
+        {
+            "id": 121221,
+            "ano": 2026,
+            "temperatura_do_globo": 35.5
+        }
+    ],
+    "Eventos_climatico": [
+        {
+            "id": 13131313,
+            "ano": 2026,
+            "nome": "El nino",
+            "Continente_afetado": "America do sul"
+        }
+    ],
+    "Incidentes": [
+        {
+            "id": 31313,
+            "ano": 2026,
+            "tipo": "Enchente",
+            "cidade": "Porto Alegre",
+            "estado": "RS",
+            "pais": "Brasil",
+            "continente": "America do sul"
         }
     ]
 }
