@@ -1,32 +1,33 @@
-const { json } = require("server/reply");
-
 const anos_lista = [];
 const eventos_lista = [];
 const incidentes_lista = [];
-let anos = document.querySelectorAll('ano-div');
-let eventos = document.querySelectorAll('eventos-div');
-let incidentes = document.querySelectorAll('incidentes-div');
+let anos = document.querySelectorAll('#ano-div');
+let eventos = document.querySelectorAll('#eventos-div');
+let incidentes = document.querySelectorAll('#incidentes-div');
 
 const get_anos = async () => {
     try {
-        const resposta = await fetch(, {
+        const resposta = await fetch("", {
             method: "GET",
         })
         const a = JSON.parse(resposta);
+        console.log(a)
         show_incidentes(a)
     } catch (e) { console.error(e) }
 }
 const get_eventos = async (id) => {
     try {
-        const resposta = await fetch(, { method: "GET", })
+        const resposta = await fetch("", { method: "GET", })
         const a = JSON.parse(resposta);
+        console.log(a)
         show_incidentes(a)
     } catch (e) { console.error(e) }
 }
 const get_incidentes = async (id) => {
     try {
-        const resposta = await fetch(, { method: "GET", })
+        const resposta = await fetch("", { method: "GET", })
         const a = JSON.parse(resposta);
+        console.log(a)
         show_incidentes(a)
     } catch (e) { console.error(e) }
 }
@@ -69,9 +70,12 @@ const show_incidentes = () => {
 }
 
 anos.forEach(element => {
-    element.addEventListener('click', (event => { get_eventos(event.target.dataset.id) }))
+    element.addEventListener('click', (event => {
+        console.log(event.target); get_eventos(event.target.dataset.id)
+    }))
 });
 eventos.forEach(element => {
-    element.addEventListener('click', (event => { get_incidentes(event.target.dataset.id) }))
+    element.addEventListener('click', (event => { 
+        console.log(event.target); get_incidentes(event.target.dataset.id) }))
 });
 get_anos();
