@@ -1,82 +1,91 @@
-const anos_lista = [];
-const eventos_lista = [];
-const incidentes_lista = [];
+//const anos_lista = [];
+//const eventos_lista = [];
+//onst incidentes_lista = [];
 let anos = document.querySelectorAll('#ano-div');
 let eventos = document.querySelectorAll('#eventos-div');
 let incidentes = document.querySelectorAll('#incidentes-div');
 
 const get_anos = async () => {
     try {
-        const resposta = await fetch("Clima_ano", {
+        const resposta = await fetch("http://localhost:3000/Clima_ano", {
             method: "GET",
         })
-        const a = JSON.parse(resposta);
+        const a = await resposta.json();
         console.log(a)
-        show_incidentes(a)
+        show_anos(a)
     } catch (e) { console.error(e) }
 }
 const get_eventos = async (ano) => {
     try {
-        const resposta = await fetch(`/Eventos_climatico?ano=${ano}`, { method: "GET", })
-        const a = JSON.parse(resposta);
+        const resposta = await fetch(`http://localhost:3000/Eventos_climatico?ano=${ano}`, { method: "GET", })
+        const a = await resposta.json();
         console.log(a)
-        show_incidentes(a)
+        show_eventos(a)
     } catch (e) { console.error(e) }
 }
-const get_incidentes = async (continente) => {
+const get_incidentes = async (ano) => {
     try {
-        const resposta = await fetch(`/Incidentes?continente=${continente}`, { method: "GET", })
-        const a = JSON.parse(resposta);
+        const resposta = await fetch(`http://localhost:3000/Incidentes?ano=${ano}`, { method: "GET", })
+        const a = await resposta.json();
         console.log(a)
         show_incidentes(a)
     } catch (e) { console.error(e) }
 }
 
-const show_anos = () => {
+const show_anos = (lista) => {
     const nav = document.querySelector('#nav-anos')
     const template = document.querySelector('#ano-template').content
-    const div = template.querySelector('#ano-div').node(true)
-    anos_lista.forEach(element => {
-        div.querySelector('h2').value = element.ano
+    lista.forEach(element => {
+        const div = template.querySelector('#ano-div').cloneNode(true)
+        div.querySelector('h2').textContent = "ano: " + element.ano
+        div.querySelector('h3').textContent = "temperatura: " + element.temperatura_do_globo + "°C"
         div.setAttribute('data-id', element.id)
+        div.addEventListener('click', (event => {
+            get_eventos(element.ano)
+        }))
         nav.prepend(div)
     });
 }
-const show_eventos = () => {
+const show_eventos = (lista) => {
     const nav = document.querySelector('#nav-eventos')
+    const tem = nav.querySelectorAll('#eventos-div');
+    if (tem.length > 0) {
+        tem.forEach(element => {
+            element.remove()
+        });
+    }
     const template = document.querySelector('#eventos-template').content
-    const div = template.querySelector('#eventos-div').node(true)
-    eventos_lista.forEach(element => {
-        div.querySelector('h2').value = element.evento
-        div.querySelector('h2').value = element.continente
+    lista.forEach(element => {
+        const div = template.querySelector('#eventos-div').cloneNode(true)
+        div.querySelector('.ano').textContent = "ano : " + element.ano
+        div.querySelector('.nome').textContent = "nome : " + element.nome
+        div.querySelector('.continente').textContent = "continente : " + element.continente
+        div.setAttribute('data-id', element.id)
+        div.addEventListener('click', (event => {
+            get_incidentes(element.ano)
+        }))
+        nav.prepend(div)
+    });
+}
+const show_incidentes = (lista) => {
+    const nav = document.querySelector('main')
+    const tem = nav.querySelectorAll('#incidentes-div');
+    if (tem.length > 0) {
+        tem.forEach(element => {
+            element.remove()
+        });
+    }
+    const template = document.querySelector('#incidentes-template').content
+    lista.forEach(element => {
+        const div = template.querySelector('#incidentes-div').cloneNode(true)
+        div.querySelector('.ano').textContent = "ano: " + element.ano
+        div.querySelector('.tipo').textContent = "tipo: " + element.tipo
+        div.querySelector('.cidade').textContent = "cidade: " + element.cidade
+        div.querySelector('.estado').textContent = "estado: " + element.estado
+        div.querySelector('.pais').textContent = "pais: " + element.pais
+        div.querySelector('.continente').textContent = "continente: " + element.continente
         div.setAttribute('data-id', element.id)
         nav.prepend(div)
     });
 }
-const show_incidentes = () => {
-    const nav = document.querySelector('#nav-anos')
-    const template = document.querySelector('#ano-template').content
-    const div = template.querySelector('#ano-div').node(true)
-    anos_lista.forEach(element => {
-        div.querySelector('h2').value = element.incidente
-        div.querySelector('h2').value = element.tipo
-        div.querySelector('h2').value = element.cidade
-        div.querySelector('h2').value = element.estado
-        div.querySelector('h2').value = element.pais
-        div.querySelector('h2').value = element.continente
-        div.setAttribute('data-id', element.id)
-        nav.prepend(div)
-    });
-}
-
-anos.forEach(element => {
-    element.addEventListener('click', (event => {
-        console.log(event.target); get_eventos(event.target.dataset.id)
-    }))
-});
-eventos.forEach(element => {
-    element.addEventListener('click', (event => {
-        console.log(event.target); get_incidentes(event.target.dataset.id)
-    }))
-});
 get_anos();

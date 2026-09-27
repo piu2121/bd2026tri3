@@ -1,28 +1,101 @@
 {
-    "Clima_ano": [
-        {
-            "id": 121221,
-            "ano": 2026,
-            "temperatura_do_globo": 35.5
-        }
-    ],
-    "Eventos_climatico": [
-        {
-            "id": 13131313,
-            "ano": 2026,
-            "nome": "El nino",
-            "Continente_afetado": "America do sul"
-        }
-    ],
-    "Incidentes": [
-        {
-            "id": 31313,
-            "ano": 2026,
-            "tipo": "Enchente",
-            "cidade": "Porto Alegre",
-            "estado": "RS",
-            "pais": "Brasil",
-            "continente": "America do sul"
-        }
-    ]
+  "Clima_ano": [
+    {
+      "id": 121221,
+      "ano": 2026,
+      "temperatura_do_globo": 35.5
+    },
+    {
+      "id": 121222,
+      "ano": 2024,
+      "temperatura_do_globo": 15.1
+    },
+    {
+      "id": 121223,
+      "ano": 2025,
+      "temperatura_do_globo": 15.0
+    }
+  ],
+  "Eventos_climatico": [
+    {
+      "id": 13131313,
+      "ano": 2026,
+      "nome": "El nino",
+      "continente": "America do sul"
+    },
+    {
+      "id": 13131314,
+      "ano": 2024,
+      "nome": "La nina",
+      "continente": "America do sul"
+    },
+    {
+      "id": 13131315,
+      "ano": 2024,
+      "nome": "Furacao Beryl",
+      "continente": "America central"
+    },
+    {
+      "id": 13131316,
+      "ano": 2025,
+      "nome": "Ciclone Dikeledi",
+      "continente": "Africa"
+    }
+  ],
+  "Incidentes": [
+    {
+      "id": 31313,
+      "ano": 2026,
+      "tipo": "Enchente",
+      "cidade": "Porto Alegre",
+      "estado": "RS",
+      "pais": "Brasil",
+      "continente": "America do sul"
+    },
+    {
+      "id": 31314,
+      "ano": 2024,
+      "tipo": "Incendio florestal",
+      "cidade": "Corumba",
+      "estado": "MS",
+      "pais": "Brasil",
+      "continente": "America do sul"
+    },
+    {
+      "id": 31315,
+      "ano": 2024,
+      "tipo": "Onda de calor",
+      "cidade": "Cuiaba",
+      "estado": "MT",
+      "pais": "Brasil",
+      "continente": "America do sul"
+    },
+    {
+      "id": 31316,
+      "ano": 2025,
+      "tipo": "Enxurrada",
+      "cidade": "Kinshasa",
+      "estado": "Kinshasa",
+      "pais": "Republica Democratica do Congo",
+      "continente": "Africa"
+    },
+    {
+      "id": 31317,
+      "ano": 2025,
+      "tipo": "Seca extrema",
+      "cidade": "Nairobi",
+      "estado": "Nairobi",
+      "pais": "Quenia",
+      "continente": "Africa"
+    },
+    {
+      "id": 31318,
+      "ano": 2026,
+      "tipo": "Incendio florestal",
+      "cidade": "Atenas",
+      "estado": "Atica",
+      "pais": "Grecia",
+      "continente": "Europa"
+    }
+  ]
 }
