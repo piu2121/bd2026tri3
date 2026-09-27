@@ -7,7 +7,7 @@ let incidentes = document.querySelectorAll('#incidentes-div');
 
 const get_anos = async () => {
     try {
-        const resposta = await fetch("", {
+        const resposta = await fetch("Clima_ano", {
             method: "GET",
         })
         const a = JSON.parse(resposta);
@@ -15,17 +15,17 @@ const get_anos = async () => {
         show_incidentes(a)
     } catch (e) { console.error(e) }
 }
-const get_eventos = async (id) => {
+const get_eventos = async (ano) => {
     try {
-        const resposta = await fetch("", { method: "GET", })
+        const resposta = await fetch(`/Eventos_climatico?ano=${ano}`, { method: "GET", })
         const a = JSON.parse(resposta);
         console.log(a)
         show_incidentes(a)
     } catch (e) { console.error(e) }
 }
-const get_incidentes = async (id) => {
+const get_incidentes = async (continente) => {
     try {
-        const resposta = await fetch("", { method: "GET", })
+        const resposta = await fetch(`/Incidentes?continente=${continente}`, { method: "GET", })
         const a = JSON.parse(resposta);
         console.log(a)
         show_incidentes(a)
@@ -75,7 +75,8 @@ anos.forEach(element => {
     }))
 });
 eventos.forEach(element => {
-    element.addEventListener('click', (event => { 
-        console.log(event.target); get_incidentes(event.target.dataset.id) }))
+    element.addEventListener('click', (event => {
+        console.log(event.target); get_incidentes(event.target.dataset.id)
+    }))
 });
 get_anos();
