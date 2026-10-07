@@ -1,0 +1,71 @@
+{
+  "Clima_ano": [
+    {
+      "id": 121221,
+      "ano": 2023,
+      "temperatura_do_globo": 26.27
+    },
+    {
+      "id": 121222,
+      "ano": 2024,
+      "temperatura_do_globo": 26.43
+    },
+    {
+      "id": 121223,
+      "ano": 2025,
+      "temperatura_do_globo": 25.87
+    }
+  ],
+  "Eventos_climatico": [
+    {
+      "id": 13131313,
+      "ano": 2023,
+      "nome": "El Niño / Anomalia de Aquecimento Pacífico",
+      "continente": "América do Sul"
+    },
+    {
+      "id": 13131314,
+      "ano": 2024,
+      "nome": "El Niño / Anomalia de Aquecimento Pacífico",
+      "continente": "América do Sul"
+    }
+  ],
+  "Incidentes": [
+    {
+      "ano": 2024,
+      "tipo": "Inundação / Enchente",
+      "cidade": "Porto Alegre",
+      "estado": "RS",
+      "pais": "Brasil",
+      "continente": "América do Sul",
+      "id": 31313
+    },
+    {
+      "ano": 2024,
+      "tipo": "Incêndio Florestal",
+      "cidade": "Corumbá",
+      "estado": "MS",
+      "pais": "Brasil",
+      "continente": "América do Sul",
+      "id": 31314
+    },
+    {
+      "ano": 2023,
+      "tipo": "Ciclone Extratropical",
+      "cidade": "Muçum",
+      "estado": "RS",
+      "pais": "Brasil",
+      "continente": "América do Sul",
+      "id": 31315
+    },
+    {
+      "ano": 2024,
+      "tipo": "Seca Extrema",
+      "cidade": "Manaus",
+      "estado": "AM",
+      "pais": "Brasil",
+      "continente": "América do Sul",
+      "id": 31316
+    }
+  ]
+}
