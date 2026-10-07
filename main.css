@@ -5,12 +5,18 @@
 }
 
 :root {
-    --a-color: rgb(91, 236, 88);
-    --b-color: rgb(229, 78, 78);
-    --c-color: rgb(79, 181, 244);
+    --a1-color: rgb(21, 81, 20);
+    --a2-color: rgb(130, 200, 129);
+    --b1-color: rgb(229, 78, 78);
+    --b2-color: rgb(163, 105, 182);
+    --c1-color: rgb(79, 181, 244);
+    --c2-color: rgb(0, 0, 7);
+    --d1-color: rgb(218, 235, 151);
+    --d2-color: rgb(199, 119, 45);
 }
 
 body {
+    background-color: rgb(181, 190, 198);
     display: grid;
     height: 100svh;
     width: 100%;
@@ -21,7 +27,7 @@ body {
 
 header,
 footer {
-    background-color: var(--a-color);
+    background: linear-gradient(157deg, var(--a1-color), var(--a2-color));
     height: 100%;
     width: 100%;
 }
@@ -60,7 +66,7 @@ nav {
     grid-auto-rows: 50% 50%;
 }
 
-main {
+main {background-color: white;
     border: solid black 1px;
     margin-left: auto;
     margin-right: auto;
@@ -83,7 +89,7 @@ header>h1 {
 
 nav>div {
     border: solid black 1px;
-    background-color: aquamarine;
+    background-color: rgb(136, 182, 166);
     height: 100%;
     width: fit-content;
     transition: 1s;
@@ -93,20 +99,28 @@ nav>div {
 #ano-div:hover,
 #eventos-div:hover,
 #incidentes-div:hover {
+    background: linear-gradient(157deg, var(--c1-color), var(--c2-color));
     z-index: 100000000;
     height: 120%;
-    width: 120%;
+    width: 13vw;
     cursor: pointer;
-    background-color: var(--c-color);
 }
+
+#eventos-div:hover {
+    background: linear-gradient(157deg, var(--d1-color), var(--d2-color));
+}
+
 #incidentes-div:hover {
-    height: 90%;
+    background: linear-gradient(157deg, var(--b1-color), var(--b2-color));
+    height: 30vh;
+    width: 23vw;
 }
+
 main>div {
     z-index: 0;
     border: solid 1px black;
-    background-color: aquamarine;
-    height: 20vh;
+    background-color: rgb(168, 193, 211);
+    height: fit-content;
     width: 99%;
     transition: 1s;
 }
